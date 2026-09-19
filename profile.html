@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Профиль</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- CodeMirror -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/theme/dracula.min.css">
+</head>
+<body>
+  <header class="topbar">
+    <span id="student-name"></span>
+    <a href="index.html">Выйти</a>
+  </header>
+
+  <main>
+    <h1>Задания</h1>
+    <div id="tasks-list" class="tasks-grid"></div>
+  </main>
+
+  <!-- Модальное окно задачи -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">×</button>
+      <h2 id="modal-title"></h2>
+      <div id="modal-condition" class="condition"></div>
+
+      <textarea id="code-editor"></textarea>
+
+      <div class="actions">
+        <button id="btn-check">Проверить</button>
+        <button id="btn-submit">Отправить как есть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Уведомления -->
+  <div id="toast-container"></div>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/mode/python/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://skulpt.org/js/skulpt.min.js"></script>
+  <script src="https://skulpt.org/js/skulpt-stdlib.js"></script>
+
+  <!-- Наши модули -->
+  <script src="https://skulpt.org/js/skulpt.min.js"></script>
+<script src="https://skulpt.org/js/skulpt-stdlib.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/error-translator.js"></script>
+<script src="js/code-editor.js"></script>
+<script src="js/sheets-sender.js"></script>
+<script src="js/profile.js"></script>
+<!-- Анимация "+5 к программированию" -->
+<div id="reward" class="reward hidden">
+  <div class="reward-inner">
+    <div class="reward-plus">+5</div>
+    <div class="reward-label">к программированию!</div>
+  </div>
+</div>
+</body>
+</html>
