@@ -326,3 +326,19 @@ body {
   font-size: 18px;
   text-shadow: 0 0 12px rgba(232, 121, 249, 1);
 }
+.btn-hint {
+  background: #f0ad4e;
+  color: #fff;
+}
+.hint-box {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+.hint-box.hidden {
+  display: none;
+}
