@@ -50,6 +50,10 @@ function openTask(task) {
   const saved = localStorage.getItem('code_' + task.id);
   initEditor('code-editor', saved ?? task.starterCode);
 
+   const hintBox = document.getElementById('hint-box');
+  hintBox.textContent = '';
+  hintBox.classList.add('hidden');
+
   modal.classList.remove('hidden');
 }
 
@@ -102,6 +106,17 @@ document.getElementById('btn-check').addEventListener('click', async () => {
     }
     showToast('⚠️ ' + human, 'error', 8000);
   }
+});
+// ---------- Кнопка «Подсказка» ----------
+document.getElementById('btn-hint').addEventListener('click', () => {
+  if (!currentTask) return;
+  const hintBox = document.getElementById('hint-box');
+  if (!currentTask.hint) {
+    hintBox.textContent = 'Для этой задачи подсказка пока не добавлена.';
+  } else {
+    hintBox.textContent = currentTask.hint;
+  }
+  hintBox.classList.toggle('hidden');
 });
 
 // ---------- Кнопка «Отправить как есть» ----------
